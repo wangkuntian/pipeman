@@ -1,0 +1,93 @@
+<domain type="kvm">
+    <uuid>a31cecbc-e543-4cf6-8164-f020428904f0</uuid>
+    <name>instance-00000c6a</name>
+    <memory>16777216</memory>
+    <vcpu>8</vcpu>
+    <metadata>
+        <nova:instance xmlns:nova="http://openstack.org/xmlns/libvirt/nova/1.0">
+            <nova:package version="22.4.0"/>
+            <nova:name>wkt-test-uswift-2</nova:name>
+            <nova:creationTime>2024-04-12 02:36:22</nova:creationTime>
+            <nova:flavor name="8-16-50">
+                <nova:memory>16384</nova:memory>
+                <nova:disk>50</nova:disk>
+                <nova:swap>0</nova:swap>
+                <nova:ephemeral>0</nova:ephemeral>
+                <nova:vcpus>8</nova:vcpus>
+            </nova:flavor>
+            <nova:owner>
+                <nova:user uuid="c0e964c8fc664c5b8b9cc85d3faf5735">ustack</nova:user>
+                <nova:project uuid="712ae117b3c14fea9afa80b97148a237">cloud_department_ustack</nova:project>
+            </nova:owner>
+            <nova:root type="image" uuid="5c7a2d00-354d-49e9-8216-5fa5819b73bf"/>
+        </nova:instance>
+    </metadata>
+    <sysinfo type="smbios">
+        <system>
+            <entry name="manufacturer">OpenStack Foundation</entry>
+            <entry name="product">OpenStack Nova</entry>
+            <entry name="version">22.4.0</entry>
+            <entry name="serial">a31cecbc-e543-4cf6-8164-f020428904f0</entry>
+            <entry name="uuid">a31cecbc-e543-4cf6-8164-f020428904f0</entry>
+            <entry name="family">Virtual Machine</entry>
+        </system>
+    </sysinfo>
+    <os>
+        <type machine="pc">hvm</type>
+        <boot dev="cdrom"/>
+        <smbios mode="sysinfo"/>
+    </os>
+    <features>
+        <acpi/>
+        <apic/>
+    </features>
+    <cputune>
+        <shares>8192</shares>
+    </cputune>
+    <clock offset="utc">
+        <timer name="pit" tickpolicy="delay"/>
+        <timer name="rtc" tickpolicy="catchup"/>
+        <timer name="hpet" present="no"/>
+    </clock>
+    <cpu mode="host-passthrough" match="exact">
+        <topology sockets="8" cores="1" threads="1"/>
+    </cpu>
+    <devices>
+        <disk type="network" device="cdrom">
+            <driver type="raw" cache="writeback" discard="unmap"/>
+            <source protocol="rbd" name="vms/a31cecbc-e543-4cf6-8164-f020428904f0_disk">
+                <host name="10.10.15.15" port="6789"/>
+                <host name="10.10.15.13" port="6789"/>
+            </source>
+            <auth username="cinder">
+                <secret type="ceph" uuid="abbbfcf4-8b0f-4ca8-b5b1-51b68f69a265"/>
+            </auth>
+            <target dev="hda" bus="ide"/>
+        </disk>
+        <interface type="bridge">
+            <mac address="fa:16:3e:d7:d8:c8"/>
+            <model type="virtio"/>
+            <source bridge="qbr50811585-21"/>
+            <mtu size="1450"/>
+            <target dev="tap50811585-21"/>
+        </interface>
+        <serial type="pty">
+            <log file="/var/lib/nova/instances/a31cecbc-e543-4cf6-8164-f020428904f0/console.log" append="off"/>
+        </serial>
+        <input type="tablet" bus="usb"/>
+        <channel type="spicevmc">
+            <target type="virtio" name="com.redhat.spice.0"/>
+        </channel>
+        <graphics type="vnc" autoport="yes" listen="10.10.15.13"/>
+        <graphics type="spice" autoport="yes" listen="10.10.15.13"/>
+        <video>
+            <model type="qxl"/>
+        </video>
+        <rng model="virtio">
+            <backend model="random">/dev/urandom</backend>
+        </rng>
+        <memballoon model="virtio">
+            <stats period="10"/>
+        </memballoon>
+    </devices>
+</domain>

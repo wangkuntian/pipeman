@@ -1,0 +1,74 @@
+<domain type="kvm">
+    <uuid>d98a4b15-a846-42bd-8d80-deee6ea622fe</uuid>
+    <name>instance-00000c58</name>
+    <memory>16777216</memory>
+    <vcpu>8</vcpu>
+    <sysinfo type="smbios">
+        <system>
+            <entry name="manufacturer">OpenStack Foundation</entry>
+            <entry name="product">OpenStack Nova</entry>
+            <entry name="version">22.4.0</entry>
+            <entry name="serial">d98a4b15-a846-42bd-8d80-deee6ea622fe</entry>
+            <entry name="uuid">d98a4b15-a846-42bd-8d80-deee6ea622fe</entry>
+            <entry name="family">Virtual Machine</entry>
+        </system>
+    </sysinfo>
+    <os>
+        <type machine="pc">hvm</type>
+        <boot dev="hd"/>
+        <smbios mode="sysinfo"/>
+    </os>
+    <features>
+        <acpi/>
+        <apic/>
+    </features>
+    <cputune>
+        <shares>8192</shares>
+    </cputune>
+    <clock offset="utc">
+        <timer name="pit" tickpolicy="delay"/>
+        <timer name="rtc" tickpolicy="catchup"/>
+        <timer name="hpet" present="no"/>
+    </clock>
+    <cpu mode="host-passthrough" match="exact">
+        <topology sockets="8" cores="1" threads="1"/>
+    </cpu>
+    <devices>
+        <disk type="network" device="disk">
+            <driver type="raw" cache="writeback" discard="unmap"/>
+            <source protocol="rbd" name="vms/d98a4b15-a846-42bd-8d80-deee6ea622fe_disk">
+                <host name="10.10.15.15" port="6789"/>
+                <host name="10.10.15.13" port="6789"/>
+            </source>
+            <auth username="cinder">
+                <secret type="ceph" uuid="abbbfcf4-8b0f-4ca8-b5b1-51b68f69a265"/>
+            </auth>
+            <target dev="vda" bus="virtio"/>
+        </disk>
+        <interface type="bridge">
+            <mac address="fa:16:3e:56:7e:a9"/>
+            <model type="virtio"/>
+            <source bridge="qbre623b87f-47"/>
+            <mtu size="1450"/>
+            <target dev="tape623b87f-47"/>
+        </interface>
+        <serial type="pty">
+            <log file="/var/lib/nova/instances/d98a4b15-a846-42bd-8d80-deee6ea622fe/console.log" append="off"/>
+        </serial>
+        <input type="tablet" bus="usb"/>
+        <channel type="spicevmc">
+            <target type="virtio" name="com.redhat.spice.0"/>
+        </channel>
+        <graphics type="vnc" autoport="yes" listen="10.10.15.13"/>
+        <graphics type="spice" autoport="yes" listen="10.10.15.13"/>
+        <video>
+            <model type="qxl"/>
+        </video>
+        <rng model="virtio">
+            <backend model="random">/dev/urandom</backend>
+        </rng>
+        <memballoon model="virtio">
+            <stats period="10"/>
+        </memballoon>
+    </devices>
+</domain>

@@ -1,0 +1,30 @@
+<domain type="kvm">
+    <name>wkt-test</name>
+    <vcpu>4</vcpu>
+    <memory>10240</memory>
+    <os>
+        <type arch="aarch64">hvm</type>
+    </os>
+    <cpu mode="host-passthrough" match="exact">
+        <topology sockets="4" cores="1" threads="1"/>
+    </cpu>
+    <devices>
+        <disk type="file" device="disk">
+            <driver name="qemu" type="raw"/>
+            <source file="/var/lib/libvirt/images/uso-server-20.20240411.ustack.0-live.aarch64.iso"/>
+            <target dev="vda" bus="virtio"/>
+            <boot order="1"/>
+        </disk>
+        <disk type="file" device="disk">
+            <driver name="qemu" type="raw"/>
+            <source file="/var/lib/libvirt/images/wkt-test.qcow2"/>
+            <target dev="vdb" bus="virtio"/>
+            <boot order="2"/>
+        </disk>
+        <serial type="pty"/>
+        <graphics type="vnc" port="-1" listen="0.0.0.0"/>
+        <video>
+            <model type="virtio"/>
+        </video>
+    </devices>
+</domain>

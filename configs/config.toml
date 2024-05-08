@@ -1,0 +1,92 @@
+[default]
+work_dir = "/home/king/Desktop/Projects/Rust/pipeman/"
+# 部署节点IP
+host = "10.10.15.14"
+# SSH端口号
+port = 22
+# 部署节点SSH用户名
+user = "root"
+# 部署节点SSH密码
+password = "ustack12#$"
+# 利用ISO镜像创建的实例名称
+iso_server_name = "pipeman-uswift-iso-server"
+# 挂载在ISO实例上的volume名称
+iso_volume_name = "pipeman-uswift-iso-server-volume"
+# 挂载在ISO实例上的volume大小
+iso_volume_size = 128
+# 新建实例上的volume大小
+server_volume_size = 64
+# 新建实例的名称前缀
+server_prefix = "pipeman-ustack-server"
+# 新建实例的hostname前缀
+host_prefix = "node"
+
+[image]
+user = "root"
+password = "qwe123@#$"
+
+[log]
+debug = false
+# 日志位置，在work_dir下。
+log_dir = "./logs/"
+
+[openstack]
+host = "10.10.15.10"
+user = "admin"
+password = "rDvLEnikVZF4lUxQu39fj9neIEMRel9XBgRhuVyB"
+auth_url = "http://10.10.15.10:35357/v3"
+project = "admin"
+project_id = "f815fb77900d4b989c9f03cac1fbcb3e"
+domain = "Default"
+# 新建普通实例的flavor ID
+flavor = "2101518c-749d-4c5e-8df5-5a16f3db3691"
+# 新建ISO实例的flavor ID
+empty_disk_flavor = "7b8b29fc-1a68-4660-be8a-9bcb3d449b08"
+# 新建实例的外部网络名称
+external_network_name = "provider1"
+# 新建实例的外部网络ID
+external_network = "38677deb-67eb-4675-b1da-83da97fa8d63"
+# 新建实例的内部网络ID
+internal_network = "f67a243c-d53c-4c2f-9372-f625ae55277c"
+
+[amd64]
+host = "10.10.15.15"
+# ISO镜像的SSH用户名
+user = "root"
+# ISO镜像的SSH密码
+password = "qwe123@#$"
+# ISO镜像名称，用于上传镜像，x86架构
+image_name = "UOS-Server-20.20240412.ustack.0-live.x86_64.iso"
+# OpenStack中IOS镜像的ID，为空表示需要创建
+image_id = "db6462ec-ddbc-4c62-b436-6143236d224f"
+# OpenStack中IOS实例volume的快照ID，为空表示需要创建
+volume_snapshot_id = ""
+# VIP Port ID
+vip_port_id = "e13ac034-9cc3-4fad-a0e1-5a0a31e86ff9"
+# keepalived router id 同一网络下不能重复<1-255>
+keepalived_router_id = 222
+
+[arm64]
+host = "10.10.15.14"
+# ISO镜像的SSH用户名
+user = "root"
+# ISO镜像的SSH密码
+password = "qwe123@#$"
+# ISO镜像名称，用于上传镜像，arm架构
+image_name = "UOS-Server-20.20240412.ustack.0-live.aarch64.iso"
+# OpenStack中IOS镜像的ID，为空表示需要创建
+image_id = ""
+# OpenStack中IOS实例volume的快照ID，为空表示需要创建
+volume_snapshot_id = ""
+# VIP Port ID
+vip_port_id = "e13ac034-9cc3-4fad-a0e1-5a0a31e86ff9"
+# keepalived router id 同一网络下不能重复<1-255>
+keepalived_router_id = 223
+
+[ignition]
+# ignition文件
+file = "uswift.ign"
+# ignition文件中的SSH用户，目前未使用
+user = "uswift"
+# ignition文件中的SSH密码，目前未使用
+password = "1"

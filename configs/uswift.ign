@@ -1,0 +1,18 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "name": "uswift",
+        "passwordHash": "$1$yoursalt$g38d2YpmTQaMVepMgPfAn/",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDSnGwfOco1t+0VPD75GjjvXTEarMYL/bMdVJJf0fHKCvZkYMaBnLb2NegrIUuRdwjl4+Inga6Jj4bxRlGwBGzTfKIbolztfEAIHb04zSFJYH3/BCdSCRIw3/qjnC3fqROrfjmVimh6Yt74ZHd7gPTBeD9PBORRpYHCAJCnM1fNnBIi6VCEEph0aZxep32t/3qUEvyWZ25zVasHmwbtHH6+D5sX5GLSFv6ryEgMW+sDEefRKFa7kVqMIXz5CUYOcdRsjoBD65a0Nqsa81iK4sF//nunwBtboKMbnxqJ7mrc3W1/M6w/MYL1dkr1V2jq3BS2zD3bTj7CSgl0ZEwUx2r8+yvi9wk8fakUUi6yaTfoZ+DvSsvRtNhszDLCy1Whcc5UCJm9H7EAXT6E1R97aaZFR4PzuxFEVkvP7Y6GIqvYKbS+faUuGX00TAdeDuciBc9VX90o8a8siBNTgydxE2uyXZ1lNhrnvWh3fwPP1kvUpxzmwYMjnNdn5Ba/EJ/FD9E= root@controller01",
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDf+Qa1yllZCSyNbavBQTfhfkF1V+wAv+mDfauuoArip6MRjaBYuLL918lHF4nweOwYEIw1+nzWZ2tFsLlDfQWgdo9nGsiSRfUWtnqH3//l0l9bcxHJxJvvHSH2ZvNg5Aikqa358k5WeqRE0t+ZLtvm0MEUu9NqOd9DXn/KSn6SSvCduDNTVp6bc1OihfUCplqipjfz+7tTtKKnTBIPAGGqSxhJTtfKdfR1Pwefq9986ClCeFTOHvJbze86Q5z35O+3Y1yUNbXRq4TU2jaW7ZMpV9WyqKYsphB7oYtcV4Tmwi3jwlD3lMTH4pMqDLIyrXUmNBI/ytpgef+lUIDZztyQCyYrp0v4uXWW2UYpx3VIXxf7JlN5XRP+eRU8YSFUZIyrE5kdwe/+egufnJRSlRHRlTAC5BaBgxV8IQULz7DTncyhwM8s4Au36YWOgRuLGceCBXozBBhyOjOBdM+CqrsLIzci2uW6EwDsuZhKBrK3PXPCoiqb4/uCl0WZwu64GwM= root@controller02",
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDDOjGOTFplv2mcpOb3CC2ZoSwApmBmVlCdKTQxj4JGEGsLynYvl3JTwAHaYFuDDs4rfJ4aLA5QV6o0687ywH7uGlY2xL04RXSwxSC6EBsB84cJQn2ePNp4GY2bvaNgtFnTeL8IzAlkLtT00tXHjpuv2QUXASdPCT7384D6cfWMD/S7d6QIYaHGDlTCLUm6+dl/G17TAK8ZfS0dBXaIxrAB+D0VfiJUjI1134VuMYkfi4oXGceCp45srtJIFJPz620ngqFGYR6FlP9ib3DUc6JGhVgnFN01fA8E1Ez/oi5zcTugISqA5xnb216BSAtGfe0IlJGj4jsUrvnvScAbynRY74n8s4jX0V4lae3OKxNKn/jouEMwiDTHZgCm3A58XcV0QR/wItFS57sDI6+aOAV+mMxo9CsCbNxNu6YWIntpZQGohV6iV4dndxBteUlZ4aoJ3djn3op5EeVBKg2UPhtY4/7Hm1iH+a+Q1N5Js22yAsDri+klqO+YA0jqOPgPDMk= root@controller03"
+        ]
+      }
+    ]
+  }
+}
