@@ -52,13 +52,17 @@ Options:
           The config file of deployment
 
       --hosts <HOSTS>
-          The ip of hosts to deploy, separated by ,
+          The ip of hosts to deploy, separated by ','
+
+  -q, --quiet
+          disable stdout log, default is false
 
   -h, --help
           Print help (see a summary with '-h')
 
   -V, --version
           Print version
+
 ```
 
 可以看到deploy支持多个参数配置。
@@ -66,6 +70,7 @@ Options:
 * -a, --arch <ARCH>。用于指定测试部署的架构，必须，可选值amd64和arm64。
 * -m, --mode <MODE>。用于指定测试部署的模式，分为单节点和多节点（3节点），必须，可选值all-in-one和multi-node。
 * --hosts <HOSTS>。用于指定测试部署的机器的IP地址，用','隔开，第一个IP是部署节点。
+* -q, --quiet。用于指定是否将日志输出到stdout上，默认是否。（程序默认会将日志输入到stdout和日志文件中）
 
 示例，如果想测试部署一个单节点的arm64集群，可以使用如下命令。
 ```bash
