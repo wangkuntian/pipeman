@@ -61,7 +61,7 @@ image_name = "UOS-Server-20.20240412.ustack.0-live.x86_64.iso"
 image_id = "db6462ec-ddbc-4c62-b436-6143236d224f"
 # OpenStack中IOS实例volume的快照ID，为空表示需要创建
 volume_snapshot_id = ""
-# VIP Port ID
+# VIP Port ID（10.10.15.50）
 vip_port_id = "e13ac034-9cc3-4fad-a0e1-5a0a31e86ff9"
 # keepalived router id 同一网络下不能重复<1-255>
 keepalived_router_id = 222
@@ -78,8 +78,8 @@ image_name = "UOS-Server-20.20240412.ustack.0-live.aarch64.iso"
 image_id = ""
 # OpenStack中IOS实例volume的快照ID，为空表示需要创建
 volume_snapshot_id = ""
-# VIP Port ID
-vip_port_id = "e13ac034-9cc3-4fad-a0e1-5a0a31e86ff9"
+# VIP Port ID（10.10.15.51）
+vip_port_id = "e3f2dea5-bae1-4ac2-a3fe-10aa3fde77fd"
 # keepalived router id 同一网络下不能重复<1-255>
 keepalived_router_id = 223
 
